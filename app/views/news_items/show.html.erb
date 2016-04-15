@@ -1,19 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @news_item.title %>
-</p>
+<%= image_tag @news_item.image_url.to_s, class: 'bg' %>
 
-<p>
-  <strong>Sub header:</strong>
-  <%= @news_item.sub_header %>
-</p>
-
-<p>
-  <strong>Content:</strong>
-  <%= @news_item.content %>
-</p>
+<div class="content">
+  <h1><%= @news_item.title %></h1>
+  <h2><%= @news_item.sub_header %></h2>
+  <p>
+    <%= @news_item.content %>
+  </p>
+</div>
 
 <%= link_to 'Edit', edit_news_item_path(@news_item) %> |
 <%= link_to 'Back', news_items_path %>
